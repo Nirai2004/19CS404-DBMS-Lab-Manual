@@ -104,124 +104,187 @@ CREATE TABLE Table_Name (
 ```
 
 **Question 1**
---
--- Paste Question 1 here
+---
+Create a table named Events with the following columns:
+EventID as INTEGER
+EventName as TEXT
+EventDate as DATE
 
 ```sql
--- Paste your SQL code below for Question 1
+-- CREATE TABLE Events (
+EventID  INTEGER,
+EventName TEXT,
+EventDate  DATE)
 ```
 
 **Output:**
 
-![Output1](output.png)
+![Screenshot 2025-04-29 084624](https://github.com/user-attachments/assets/6da534c3-984f-439f-9f01-e72af1e1585a)
 
 **Question 2**
 ---
--- Paste Question 2 here
+Create a table named Products with the following constraints:
+ProductID as INTEGER should be the primary key.
+ProductName as TEXT should be unique and not NULL.
+Price as REAL should be greater than 0.
+StockQuantity as INTEGER should be non-negative.
 
 ```sql
--- Paste your SQL code below for Question 2
+CREATE TABLE Products (
+ProductID  INTEGER  primary key,
+ProductName  TEXT  unique not NULL,
+Price  REAL CHECK(Price > 0),
+StockQuantity  INTEGER CHECK(StockQuantity > 0)
+)
 ```
 
 **Output:**
+![Screenshot 2025-04-29 084846](https://github.com/user-attachments/assets/6f4b5f43-e8b6-4c41-b707-961d4582ebff)
 
-![Output2](output.png)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+Create a new table named contacts with the following specifications:
+contact_id as INTEGER and primary key.
+first_name as TEXT and not NULL.
+last_name as TEXT and not NULL.
+email as TEXT.
+phone as TEXT and not NULL with a check constraint to ensure the length of phone is at least 10 characters.
 
 ```sql
--- Paste your SQL code below for Question 3
+CREATE TABLE contacts(
+contact_id  INTEGER  primary key,
+first_name  TEXT  not NULL,
+last_name TEXT not NULL,
+email  TEXT,
+phone TEXT CHECK(length (phone) = 10))
 ```
 
 **Output:**
 
-![Output3](output.png)
+![Screenshot 2025-04-29 084846](https://github.com/user-attachments/assets/35d1bb87-aa67-4d1d-aeb9-f39dee2d6f05)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+Write a SQL query for adding a new column named "email" with the datatype VARCHAR(100) to the  table "customer" 
+
 
 ```sql
--- Paste your SQL code below for Question 4
+alter table customer add email VARCHAR(100)
 ```
 
 **Output:**
 
-![Output4](output.png)
+![Screenshot 2025-04-29 090447](https://github.com/user-attachments/assets/d020139a-e5c1-419c-b4d4-f1bbca877961)
+
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+-- Write a SQL query to modify the Student_details table by adding a new column Email of type VARCHAR(50) and updating the column MARKS to have a default value of 0.
 
 ```sql
--- Paste your SQL code below for Question 5
+alter table Student_details add Email VARCHAR (50);
+alter table Student_details add MARKS default 0;
+
 ```
 
 **Output:**
 
-![Output5](output.png)
+![Screenshot 2025-04-29 090550](https://github.com/user-attachments/assets/7ac84df1-c5d1-4893-988f-ebb24a0759a0)
 
 **Question 6**
 ---
--- Paste Question 6 here
+-- Create a table named Invoices with the following constraints:
+InvoiceID as INTEGER should be the primary key.
+InvoiceDate as DATE.
+Amount as REAL should be greater than 0.
+DueDate as DATE should be greater than the InvoiceDate.
+OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
 
 ```sql
--- Paste your SQL code below for Question 6
+ create table Invoices(
+InvoiceID  INTEGER primary key,
+InvoiceDate  DATE,
+Amount  REAL CHECK(Amount >0),
+DueDate  DATE CHECK(DueDate> InvoiceDate),
+OrderID  INTEGER ,
+foreign key(OrderID) REFERENCES Orders(OrderID)
+)
 ```
 
 **Output:**
 
-![Output6](output.png)
+![Screenshot 2025-04-29 090854](https://github.com/user-attachments/assets/7bf2d61e-6868-4590-ad6e-e21d1394e34e)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+Create a table named ProjectAssignments with the following constraints:
+AssignmentID as INTEGER should be the primary key.
+EmployeeID as INTEGER should be a foreign key referencing Employees(EmployeeID).
+ProjectID as INTEGER should be a foreign key referencing Projects(ProjectID).
+AssignmentDate as DATE should be NOT NULL.
 
 ```sql
--- Paste your SQL code below for Question 7
+create table ProjectAssignments(
+AssignmentID  INTEGER  primary key,
+EmployeeID INTEGER,
+ProjectID INTEGER ,
+AssignmentDate  DATE  NOT NULL,
+FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID),
+FOREIGN KEY (ProjectID) REFERENCES Projects(ProjectID)
+)
 ```
 
 **Output:**
 
-![Output7](output.png)
+![Screenshot 2025-04-29 090919](https://github.com/user-attachments/assets/7b1bd890-3250-4a98-b1fd-9e5e0fce466e)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+-- Insert all products from Discontinued_products into Products.
+
+Table attributes are ProductID, ProductName, Price, Stock
 
 ```sql
--- Paste your SQL code below for Question 8
+INSERT INTO Products(ProductID, ProductName, Price, Stock)
+SELECT ProductID, ProductName, Price, Stock
+FROM Discontinued_products
 ```
 
 **Output:**
 
-![Output8](output.png)
+![Screenshot 2025-04-29 091258](https://github.com/user-attachments/assets/09d8a97b-84c7-4dc7-8fce-af0f4e230cc4)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+Insert a customer with CustomerID 301, Name Michael Jordan, Address 123 Maple St, City Chicago, and ZipCode 60616 into the Customers table.
 
 ```sql
--- Paste your SQL code below for Question 9
+INSERT INTO Customers (CustomerID ,Name,Address, City, ZipCode) VALUES (301 ,"Michael Jordan" ,"123 Maple St" , "Chicago" ,   60616)```
 ```
-
 **Output:**
 
-![Output9](output.png)
+![Screenshot 2025-04-29 091313](https://github.com/user-attachments/assets/893d22df-1966-4b8c-aecd-16e1e42877a6)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+In the Employee table, insert a record where some fields are NULL, another record where all fields are filled without any NULL values, and a third record where some fields are filled, and others are left as NULL.
 
 ```sql
--- Paste your SQL code below for Question 10
+INSERT INTO Employee (EmployeeID,Name,Position,Department,Salary) VALUES (5 ,"George Clark","Consultant" ,NULL,NULL),(7,"Noah Davis","Manager","HR",60000),(8,"Ava Miller","Consultant","IT",NULL);
 ```
 
 **Output:**
 
-![Output10](output.png)
+![Screenshot 2025-04-29 091326](https://github.com/user-attachments/assets/b880734d-29e0-4348-9b22-8b72edcd728d)
+
 
 
 ## RESULT
