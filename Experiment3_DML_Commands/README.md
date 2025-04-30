@@ -47,123 +47,141 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Paste Question 1 here
+![Screenshot 2025-04-29 120800](https://github.com/user-attachments/assets/58f41ad1-a713-4ad3-b299-fdd849cb2cca)
 
 ```sql
--- Paste your SQL code below for Question 1
+UPDATE products
+SET reorder_lvl = 40
+WHERE category = 'Grocery';
 ```
 
 **Output:**
 
-![Output1](output.png)
+![Screenshot 2025-04-29 121349](https://github.com/user-attachments/assets/32a2b973-d275-416d-9479-00db10e6c80f)
 
 **Question 2**
 ---
--- Paste Question 2 here
+![Screenshot 2025-04-29 120827](https://github.com/user-attachments/assets/4252aa30-2b65-4929-843d-0762a3415249)
 
 ```sql
--- Paste your SQL code below for Question 2
+UPDATE employees
+SET hire_date = '2024-01-24'
+WHERE department_id = 50;
 ```
 
 **Output:**
 
-![Output2](output.png)
+![Screenshot 2025-04-29 121401](https://github.com/user-attachments/assets/e97fbcc4-153d-433d-b4c0-efb9b09b0084)
 
 **Question 3**
 ---
--- Paste Question 3 here
+![Screenshot 2025-04-29 120836](https://github.com/user-attachments/assets/dfc4f6c3-1278-493c-b631-6a6062c32f65)
 
 ```sql
--- Paste your SQL code below for Question 3
+UPDATE sales
+SET total_sell_price = quantity * sell_price
+WHERE product_id = 10;
 ```
 
 **Output:**
 
-![Output3](output.png)
+![Screenshot 2025-04-29 121411](https://github.com/user-attachments/assets/0c8949a7-ce77-48db-b53a-e861756e3042)
 
 **Question 4**
 ---
--- Paste Question 4 here
+![Screenshot 2025-04-29 120845](https://github.com/user-attachments/assets/93855f75-bebc-4c02-aa72-d989c8b3b60c)
 
 ```sql
--- Paste your SQL code below for Question 4
+UPDATE employees
+SET salary = salary + 500,
+    email = 'updated'
+WHERE job_id = 'SA_REP' AND commission_pct > 0.15;
 ```
 
 **Output:**
 
-![Output4](output.png)
+![Screenshot 2025-04-29 121429](https://github.com/user-attachments/assets/8fbad5ae-92a7-4b71-bd58-53d2556a25ea)
 
 **Question 5**
 ---
--- Paste Question 5 here
+![Screenshot 2025-04-29 120854](https://github.com/user-attachments/assets/05731636-1e53-4790-a40b-c8e2b94f6c30)
 
 ```sql
--- Paste your SQL code below for Question 5
+UPDATE products
+SET reorder_lvl = 20
+WHERE category = 'Snacks' AND quantity < 10;
 ```
 
 **Output:**
 
-![Output5](output.png)
+![Screenshot 2025-04-29 121439](https://github.com/user-attachments/assets/4588273f-3e46-4b1c-bf7e-ac07ab57a58a)
 
 **Question 6**
 ---
--- Paste Question 6 here
+![Screenshot 2025-04-29 120902](https://github.com/user-attachments/assets/9e5d3d03-1723-4708-9652-7cd24590dd13)
 
 ```sql
--- Paste your SQL code below for Question 6
+DELETE FROM Doctors
+WHERE doctor_id = 1;
 ```
 
 **Output:**
 
-![Output6](output.png)
+![Screenshot 2025-04-29 121451](https://github.com/user-attachments/assets/3309667a-6133-4963-92b0-9d164444a417)
 
 **Question 7**
 ---
--- Paste Question 7 here
+![Screenshot 2025-04-29 120911](https://github.com/user-attachments/assets/047b30de-229e-45b0-87e7-6788d1518d20)
 
 ```sql
--- Paste your SQL code below for Question 7
+DELETE FROM Doctors
+WHERE last_name = 'Brown'
+  AND specialization IN ('Pediatrics', 'Cardiology');
 ```
 
 **Output:**
 
-![Output7](output.png)
+![Screenshot 2025-04-29 121513](https://github.com/user-attachments/assets/20758650-30e0-415c-8a68-6986ef820d76)
 
 **Question 8**
 ---
--- Paste Question 8 here
+![Screenshot 2025-04-29 120922](https://github.com/user-attachments/assets/e3e65701-9bca-4774-8471-9293d5d5729c)
 
 ```sql
--- Paste your SQL code below for Question 8
+DELETE FROM customer
+WHERE WORKING_AREA = 'New York';
 ```
 
 **Output:**
 
-![Output8](output.png)
+![Screenshot 2025-04-29 121527](https://github.com/user-attachments/assets/526f67db-bf67-4933-af89-ac462325c356)
 
 **Question 9**
 ---
--- Paste Question 9 here
+![Screenshot 2025-04-29 120932](https://github.com/user-attachments/assets/28ef27bc-9ca2-49dc-85ef-208020bc6ab9)
 
 ```sql
--- Paste your SQL code below for Question 9
+DELETE FROM Surgeries
+WHERE surgery_date = '2024-02-28';
 ```
 
 **Output:**
 
-![Output9](output.png)
+![Screenshot 2025-04-29 121536](https://github.com/user-attachments/assets/1693498f-eba9-4f08-ae84-c32384b004aa)
 
 **Question 10**
 ---
--- Paste Question 10 here
+![Screenshot 2025-04-29 120943](https://github.com/user-attachments/assets/a409b2a9-7fe9-419d-820a-808bbfc55b87)
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT *
+FROM EmployeeInfo
+WHERE EmpFname NOT IN ('Sanjay', 'Sonia');
 ```
 
 **Output:**
 
-![Output10](output.png)
+![Screenshot 2025-04-29 121550](https://github.com/user-attachments/assets/5de6eaf6-0df0-4b94-9040-5db9cafd4593)
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
